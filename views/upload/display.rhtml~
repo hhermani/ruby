@@ -1,0 +1,8 @@
+<h3><%= @picture.name %></h3>
+
+<img src="<%= url_for(:action => 'picture', :id => @picture.id) %>"/>
+
+<p>Comment:</br>
+<%= @picture.comment %></p>
+<p> Nice url: </br>
+http://217.100.174.20:8080/display/<%= @picture.url %></p>

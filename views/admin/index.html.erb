@@ -1,0 +1,16 @@
+<h1> Listing of pictures</h1>
+<h2>Edwin, dit is onze admin pagina, zo vanuit de database</h2>
+<p> hier wordt gebruik gemaakt van attachment_fu, de files worden automatisch ge-rised naar 640x480, tevens een thumbnail en files staan niet meer in de database maar op het filesysteem.</br>
+<b>who is your daddy ?</b></p>
+
+<table>
+
+<% for picture in @pictures %>
+<tr>
+<td><%= image_tag(picture.public_filename(:thumb)) %></td>
+<td><%=h picture.filename %></td>
+<td><%= picture.comment %></td>
+       <td><%= link_to 'Delete', :id => picture, :action => :delete %></td>
+</tr>
+<% end %>
+</table>

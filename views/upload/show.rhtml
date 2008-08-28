@@ -1,0 +1,8 @@
+<h3><%= @picture.filename %></h3>
+
+<%= image_tag(@picture.public_filename()) %><br />
+
+<p>Comment:</br>
+<%= @picture.comment %></p>
+<p> Nice url: </br>
+http://217.100.174.20:8080/showme/<%= @picture.url %></p>
