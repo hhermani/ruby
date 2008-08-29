@@ -1,6 +1,6 @@
-<h3><%= @picture.name %></h3>
+<h3><%= @picture.filename %></h3>
 
-<img src="<%= url_for(:action => 'picture', :id => @picture.id) %>"/>
+<%= image_tag(@picture.public_filename()) %><br />
 
 <p>Comment:</br>
 <%= @picture.comment %></p>

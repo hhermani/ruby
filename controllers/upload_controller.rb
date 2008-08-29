@@ -1,5 +1,9 @@
 class UploadController < ApplicationController
 
+def index
+redirect_to :action => 'get'
+end
+
   def get
     @picture = Picture.new
   end

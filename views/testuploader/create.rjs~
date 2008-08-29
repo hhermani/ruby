@@ -1,2 +1,0 @@
-page.insert_html :bottom, "pictures", :partial => "picture", :object => @picture
-page.visual_effect :highlight, "picture_#{@picture.id}" 

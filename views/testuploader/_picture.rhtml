@@ -1,5 +1,5 @@
 <li id="picture_<%= picture.id %>">
 <% if picture.image? %>
-<%= link_to(image_tag(picture.public_filename(:thumb))) %><br />
+<%= image_tag(picture.public_filename()) %><br />
 <% end %>
 </li>

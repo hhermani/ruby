@@ -17,6 +17,8 @@
 </div>
 
 <br />
+<%= image_tag 'loading.gif', :id=>'spinner', :style=>"display:none; float:left;" %>
+<br><br><br>
 
 <div id="formulier">
 <% form_for(:picture, :url => {:action => "create", :format => "js"}, :html => { :multipart => true, :target => 'upload_frame' }) do |form| %>

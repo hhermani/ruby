@@ -1,5 +1,11 @@
 <%= error_messages_for("picture") %>
 
+<h1>Welcome to mijn leven.</h1>
+
+<p>Stap 1: Upload je foto</p>
+<br><br><br><br>
+<%= image_tag 'loading.gif', :id=>'spinner', :style=>"display:none; float:right;" %>
+<br><br><br>
 <% form_for :picture,
             :url => {:action => 'save'},
             :html => { :multipart => true} do |form| %>
