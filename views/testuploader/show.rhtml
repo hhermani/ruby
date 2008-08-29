@@ -1,0 +1,26 @@
+<h1>Picture</h1>
+
+<div id=menu>
+<table>
+<tr>
+<td>Annotate</td><td>Comment</td><td>Nice URL</td>
+<td>
+<%= link_to_remote "Email a friend",
+:url => {:action => 'add_comment', :id => @picture.id} %>
+</td>
+</tr>
+</table>
+</div>
+
+<div id="picture">
+<%= render(:partial => "picture", :object => @picture) %>
+</div>
+
+<br />
+
+<div id="formulier">
+<% form_for(:picture, :url => {:action => "create", :format => "js"}, :html => { :multipart => true, :target => 'upload_frame' }) do |form| %>
+<%= render(:partial => "form", :object => form) %>
+<% end %>
+</div>
+<iframe id='upload_frame' name="upload_frame" style="width:1px;height:1px;border:0px" src="about:blank"></iframe>
