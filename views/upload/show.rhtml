@@ -3,8 +3,15 @@
 
 
 <%= image_tag(@picture.public_filename()) %><br />
-
+<p>Uploaded on: <%= @picture.created_on %></p>
 <p>Comment:</br>
 <%= @picture.comment %></p>
-<p> Nice url: </br>
-http://217.100.174.20:8080/showme/<%= @picture.url %></p>
+<p> 
+<input type="button" id="edit_<%= @picture.id %>" value="edit"/>
+<strong>Nice url:</strong>
+http://217.100.174.20:8080/showme/
+<%= in_place_editor_field "picture", :url, {}, {
+:external_control => "edit_"+@picture.id.to_s
+} %>
+
+</p>

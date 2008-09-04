@@ -1,11 +1,21 @@
 <%= error_messages_for("picture") %>
 
-<h1>Welcome to mijn leven.</h1>
+<div class="main">
+<div class="head">
 
-<p>Stap 1: Upload je foto</p>
+</div>
+
+
+<h1>What's in my bag?</h1>
+<div class="focus">
+<h2>Show me yours and I'll show you mine</h2>
+
+<p class="instruct1">Upload je foto</p>
+
 <br><br><br><br>
 <%= image_tag 'loading.gif', :id=>'spinner', :style=>"display:none; float:right;" %>
 <br><br><br>
+<div class="action">
 <% form_for :picture,
             :url => {:action => 'save'},
             :html => { :multipart => true} do |form| %>
@@ -16,3 +26,8 @@ Upload your picture: <%= form.file_field("uploaded_data") %><br/>
 <%= submit_tag("Upload file") %>
 
 <% end %>
+</div> <!-- action -->
+</div> <!-- focus -->
+<div class="foot">
+</div> <!-- foot -->
+</div> <!-- main -->

@@ -1,8 +1,15 @@
-<h3><%= @picture.filename %></h3>
+<h1>Welcome to mijnleven.nl</h1>
+<h3>Stap 2: Maak de wijzigingen in de foto</h3>
+
 
 <%= image_tag(@picture.public_filename()) %><br />
-
+<p>Uploaded on: <%= @picture.created_on %></p>
 <p>Comment:</br>
 <%= @picture.comment %></p>
 <p> Nice url: </br>
-http://217.100.174.20:8080/showme/<%= @picture.url %></p>
+http://217.100.174.20:8080/showme/<%= @picture.url %>
+<%= in_place_editor_field "picture", picture.url, {}, {
+:load_text_url=> url_for(:action=>"get_picture_#url", :id=>@picture)
+} %>
+
+</p>
